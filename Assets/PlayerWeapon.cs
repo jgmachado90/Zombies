@@ -28,17 +28,25 @@ public class PlayerWeapon : MonoBehaviour
 
 
 
-
+ 
     private void FixedUpdate()
     {
-        shooting = !playerMovement.moving;
-
+       
         if (enemyTarget && !playerMovement.moving)
-        {
+        { 
             Vector3 vectorToTarget = enemyTarget.transform.position - transform.position;
             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * shootRotationSpeed);
+
+            
+            if(Vector3.Angle(transform.right, vectorToTarget) <= 0.2f)
+            {
+                shooting = true;
+            }
+            else{
+                shooting = false;
+            }
         }
 
 
@@ -47,10 +55,10 @@ public class PlayerWeapon : MonoBehaviour
     public IEnumerator ShootCoroutine()
     {
         while (true) {
-            if (shooting)
+            if (!playerMovement.moving)
             {
                 enemyTarget = SeekEnemy();
-                if (enemyTarget)
+                if (enemyTarget && shooting)
                 {
                     GameObject bullet = Instantiate(weaponInfo.defaultBullet);
                     bullet.transform.position = shootPosition.position;
@@ -99,7 +107,7 @@ public class PlayerWeapon : MonoBehaviour
         Vector3 endMarker = enemy.transform.position;
 
         float startTime = Time.time;
-        float speed = 20f;
+        float speed = 50f;
 
         float journeyLength = Vector3.Distance(startMarker, endMarker); ;
      

@@ -1977,6 +1977,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 749165832}
+    - target: {fileID: 2125165335, guid: 989b27be3c25b4b4292345e105b2b4ad, type: 3}
+      propertyPath: shootRotationSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1117332285007809461, guid: 989b27be3c25b4b4292345e105b2b4ad,
         type: 3}
       propertyPath: m_Name
