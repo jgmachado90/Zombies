@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\EnemyAttack.cs" />
     <Compile Include="Assets\FollowPlayer.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
@@ -72,9 +74,12 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\PlayerInfo.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
     <Compile Include="Assets\PlayerWeapon.cs" />
+    <Compile Include="Assets\Prefabs\Enemies\EnemyInfo.cs" />
     <Compile Include="Assets\Prefabs\Weapons\WeaponInfo.cs" />
+    <Compile Include="Assets\WaveManager.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/newUnityInstalls/2019.4.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

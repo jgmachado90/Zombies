@@ -15,7 +15,9 @@ MonoBehaviour:
   prefabName: Weapon1
   weaponPrefab: {fileID: 3586573236676693790, guid: 5ba0e37c8c77e1544b3b966d314f6826,
     type: 3}
-  shootSpeed: 0.5
+  shootSpeed: 1
+  shootParticleSpeed: 45
+  damage: 30
   shootParticle: {fileID: 0}
   muzzleParticle: {fileID: 0}
   feedbackParticle: {fileID: 0}

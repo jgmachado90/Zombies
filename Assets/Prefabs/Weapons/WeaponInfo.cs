@@ -7,6 +7,8 @@ public class WeaponInfo : ScriptableObject
     public GameObject weaponPrefab;
 
     public float shootSpeed;
+    public float shootParticleSpeed;
+    public int damage;
 
     public ParticleSystem shootParticle;
     public ParticleSystem muzzleParticle;
