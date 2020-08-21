@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9206219559305820269}
   - component: {fileID: 3805414441054710415}
-  m_Layer: 0
+  - component: {fileID: 7655605153275966828}
+  m_Layer: 10
   m_Name: Wood1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +82,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &7655605153275966828
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127287287456225427}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.54, y: 0.37}
+    newSize: {x: 1.54, y: 0.37}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.54, y: 0.37}
+  m_EdgeRadius: 0
 --- !u!1 &2210860519829311455
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,9 +117,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505061748787206493}
-  m_Layer: 0
+  - component: {fileID: 283769709}
+  - component: {fileID: 7741334406926661929}
+  m_Layer: 10
   m_Name: WoodBlock
-  m_TagString: Untagged
+  m_TagString: barricade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +143,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &283769709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2210860519829311455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643456d90b9543c4a9f027d380a94698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alive: 0
+  levelOfBarricade: 3
+  currentLevelOfBarricade: 0
+  barricadeObject:
+  - {fileID: 7255998934888752552}
+  - {fileID: 8056193025787853194}
+  - {fileID: 1127287287456225427}
+--- !u!61 &7741334406926661929
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2210860519829311455}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.32318652, y: 0.23744297}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.0974157, y: 2.8731623}
+  m_EdgeRadius: 0
 --- !u!1 &7255998934888752552
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +198,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5298534950954292906}
   - component: {fileID: 8808703612716200649}
-  m_Layer: 0
+  - component: {fileID: 5668912015469313188}
+  m_Layer: 10
   m_Name: Wood1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,6 +270,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &5668912015469313188
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255998934888752552}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.54, y: 0.37}
+    newSize: {x: 1.54, y: 0.37}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.54, y: 0.37}
+  m_EdgeRadius: 0
 --- !u!1 &8056193025787853194
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +306,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1461676594282017572}
   - component: {fileID: 5161142826832489817}
-  m_Layer: 0
+  - component: {fileID: 6046228209808653885}
+  m_Layer: 10
   m_Name: Wood1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,3 +378,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &6046228209808653885
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056193025787853194}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.54, y: 0.37}
+    newSize: {x: 1.54, y: 0.37}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.54, y: 0.37}
+  m_EdgeRadius: 0

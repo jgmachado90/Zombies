@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Environment
+  - barricade
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - 
   - Environment
-  - 
-  - 
+  - Bullet
+  - Barricade
   - 
   - 
   - 
