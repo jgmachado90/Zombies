@@ -5,6 +5,7 @@ public class WeaponInfo : ScriptableObject
 {
     public string prefabName;
     public GameObject weaponPrefab;
+    public Sprite weaponSprite;
 
     public float shootSpeed;
     public float shootParticleSpeed;

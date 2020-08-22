@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     internal void GiveDamage(int damage)
     {
+        PointsManager.instance.AddPoints(10);
         currentHealth -= damage;
         lifeBar.value = (float)currentHealth / enemyInfo.health;
 
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour
     private void Death()
     {
         Debug.Log("enemy died" + gameObject);
+        PointsManager.instance.AddPoints(100);
         WaveManager.instance.RemoveEnemy(this);
         Destroy(transform.gameObject);
     }

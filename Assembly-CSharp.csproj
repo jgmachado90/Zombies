@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CaixinhaDaSorte.cs" />
+    <Compile Include="Assets\Door.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\PointsManager.cs" />
     <Compile Include="Assets\Prefabs\Enemies\EnemyInfo.cs" />
     <Compile Include="Assets\Prefabs\Weapons\WeaponInfo.cs" />
     <Compile Include="Assets\Scripts\Barricade.cs" />

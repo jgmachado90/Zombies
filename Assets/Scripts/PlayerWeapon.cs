@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour
 {
     public WeaponInfo weaponInfo;
+    public GameObject currentWeapon;
     public Transform weapon;
     public Transform shootPosition;
     public PlayerMovement playerMovement;
@@ -18,7 +19,24 @@ public class PlayerWeapon : MonoBehaviour
     private void Start()
     {
         turning = false;
+        OnChangeWeapon(weaponInfo);
         StartShootCoroutine();
+
+    }
+
+    public void OnChangeWeapon(WeaponInfo newWeapon)
+    {
+        Debug.Log("destroy current weapon");
+        Destroy(currentWeapon);
+        weaponInfo = newWeapon;
+        currentWeapon = Instantiate(weaponInfo.weaponPrefab);
+        
+        currentWeapon.transform.SetParent(transform);
+        currentWeapon.transform.position = Vector3.zero;
+        currentWeapon.transform.position = new Vector3(transform.position.x , transform.position.y, transform.position.z);
+        currentWeapon.transform.rotation = transform.rotation;
+        shootPosition = currentWeapon.GetComponentInChildren<Transform>();
+
     }
 
     private void StartShootCoroutine()
