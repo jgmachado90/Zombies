@@ -18,7 +18,7 @@ MonoBehaviour:
   weaponSprite: {fileID: 21300000, guid: f009d2842e3ff244caec69f0c9dd6ebc, type: 3}
   shootSpeed: 0.4
   shootParticleSpeed: 30
-  damage: 50
+  damage: 60
   shootParticle: {fileID: 0}
   muzzleParticle: {fileID: 0}
   feedbackParticle: {fileID: 0}

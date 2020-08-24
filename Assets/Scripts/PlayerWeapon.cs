@@ -26,7 +26,6 @@ public class PlayerWeapon : MonoBehaviour
 
     public void OnChangeWeapon(WeaponInfo newWeapon)
     {
-        Debug.Log("destroy current weapon");
         Destroy(currentWeapon);
         weaponInfo = newWeapon;
         currentWeapon = Instantiate(weaponInfo.weaponPrefab);

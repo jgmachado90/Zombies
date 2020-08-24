@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,17 +7,35 @@ using UnityEngine.UI;
 public class CaixinhaDaSorte : MonoBehaviour
 {
     public PlayerWeapon playerWeapon;
+    public int cost;
     public GameObject caixinhaDaSorteModal;
     public List<WeaponInfo> weaponList;
     public GameObject selectedWeaponModal;
     public WeaponInfo selectedWeapon;
+    public Button button;
     public bool buyed;
 
 
     private void Start()
     {
         buyed = false;
+        button = caixinhaDaSorteModal.GetComponentInChildren<Button>();
     }
+
+    private void Update()
+    {
+        if (CanBuy())
+        {
+            Debug.Log("canbuy");
+            button.interactable = true;
+        }
+        else
+        {
+            Debug.Log("cant buy");
+            button.interactable = false;
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -62,12 +81,23 @@ public class CaixinhaDaSorte : MonoBehaviour
 
     public void OnBuy()
     {
-        int i = Random.Range(0, weaponList.Count);
+        PointsManager.instance.RemovePoints(cost);
+        int i = UnityEngine.Random.Range(0, weaponList.Count);
         selectedWeapon = weaponList[i];
         CloseBuyModal();
         buyed = true;
         OpenSelectedModal();
         StartCoroutine(CloseSelectedWeaponModalCoroutine());
+        
+
+    }
+
+    private bool CanBuy()
+    {
+        if (PointsManager.instance.currentPoints >= cost)
+            return true;
+        else
+            return false;
     }
 
     public void OnChangeWeapon()

@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
   
     private void Death()
     {
-        Debug.Log("enemy died" + gameObject);
+      
         PointsManager.instance.AddPoints(100);
         WaveManager.instance.RemoveEnemy(this);
         Destroy(transform.gameObject);

@@ -36,6 +36,15 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    public void FindSpawns(GameObject gO)
+    {
+        Spawner[] sP = gO.GetComponentsInChildren<Spawner>();
+        foreach(Spawner s in sP)
+        {
+            spawners.Add(s.transform);
+        }
+    }
+
     public void NextWave()
     {
         currentWaveLevel++;
@@ -51,7 +60,7 @@ public class WaveManager : MonoBehaviour
 
     public IEnumerator LevelStartCoroutine()
     {
-        Debug.Log("startCoroutine");
+
         levelStart = true;
 
         int numberOfZombiesInTheWave = currentWaveLevel * 2;

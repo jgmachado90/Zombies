@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\WaveManager.cs" />
+    <Compile Include="Assets\Spawner.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/newUnityInstalls/2019.4.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

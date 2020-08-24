@@ -66,7 +66,7 @@ public class Barricade : MonoBehaviour
       
         if (collision.tag == "Player")
         {
-            Debug.Log("trigger exit");
+
             StopAllCoroutines();
         }
 
@@ -75,7 +75,7 @@ public class Barricade : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger enter");
+
         if(collision.tag == "Player")
         {
             StartCoroutine(RebuildBarricadeCoroutine());
