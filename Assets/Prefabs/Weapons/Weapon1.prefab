@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3461239376275738259}
   - component: {fileID: 5822891748212802889}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4661857334970344259}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShootPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

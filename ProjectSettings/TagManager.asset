@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Environment
   - barricade
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Environment
   - Bullet
   - Barricade
-  - 
+  - Player
   - 
   - 
   - 

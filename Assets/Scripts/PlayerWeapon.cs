@@ -13,7 +13,7 @@ public class PlayerWeapon : MonoBehaviour
     public PlayerMovement playerMovement;
     public bool turning;
     public float shootRotationSpeed;
-
+    public LayerMask shootMask;
 
     public Enemy enemyTarget;
     private void Start()
@@ -49,10 +49,10 @@ public class PlayerWeapon : MonoBehaviour
     private void FixedUpdate()
     {
        
-        if (enemyTarget && !playerMovement.moving)
+        if (enemyTarget && !playerMovement.moving && CanShoot())
         {
             Vector3 vectorToTarget = enemyTarget.transform.position - shootPosition.position;
-            Debug.DrawRay(transform.position, vectorToTarget);
+            
             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * shootRotationSpeed);
@@ -80,7 +80,7 @@ public class PlayerWeapon : MonoBehaviour
             if (!playerMovement.moving)
             {
                 enemyTarget = SeekEnemy();
-                if (enemyTarget && !turning)
+                if (enemyTarget && !turning && CanShoot())
                 {
                     GameObject bullet = Instantiate(weaponInfo.defaultBullet);
                     bullet.GetComponent<Bullet>().whoShootsMe = weaponInfo;
@@ -100,6 +100,22 @@ public class PlayerWeapon : MonoBehaviour
             }
         }
        
+    }
+
+    private bool CanShoot()
+    {
+   
+        Vector3 vectorToTarget = enemyTarget.transform.position - shootPosition.position;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, vectorToTarget, Mathf.Infinity, shootMask) ;
+        Debug.DrawRay(shootPosition.position, vectorToTarget);
+       
+
+        if (hit.collider.tag == "enemy")
+        {
+            return true;
+        }
+        return false;
+        
     }
 
     public Enemy SeekEnemy()
