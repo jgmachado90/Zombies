@@ -8,8 +8,13 @@ public class Barricade : MonoBehaviour
     public bool alive;
     public int levelOfBarricade;
     public int currentLevelOfBarricade;
+    public int pointsOnRebuild;
+  
 
-    public List<GameObject> barricadeObject;
+    public List<BarricadeObject> barricadeObject;
+
+
+
 
 
     private void Start()
@@ -20,11 +25,11 @@ public class Barricade : MonoBehaviour
 
     public void DestroyBarricade()
     {
-        foreach(GameObject gO in barricadeObject)
+        foreach(BarricadeObject bO in barricadeObject)
         {
-            if (gO.activeSelf)
+            if (bO.active)
             {
-                gO.SetActive(false);
+                bO.DisableActiveBarricade();
                 if (LastBarricadeCheck())
                     alive = false;
                 return;
@@ -35,9 +40,9 @@ public class Barricade : MonoBehaviour
     private bool LastBarricadeCheck()
     {
         bool alive = false;
-        foreach (GameObject gO in barricadeObject)
+        foreach (BarricadeObject bO in barricadeObject)
         {
-            if (gO.activeSelf)
+            if (bO.active)
             {
                 alive = true;
             }
@@ -50,11 +55,12 @@ public class Barricade : MonoBehaviour
 
     public void RebuildBarricade()
     {
-        foreach(GameObject gO in barricadeObject)
+        foreach (BarricadeObject bO in barricadeObject)
         {
-            if (!gO.activeSelf)
+            if (!bO.active)
             {
-                gO.SetActive(true);
+                bO.EnableActiveBarricade();
+                PointsManager.instance.AddPoints(50);
                 alive = true;
                 return;
             }
@@ -89,7 +95,7 @@ public class Barricade : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(PlayerInfo.instance.timeToRebuildBarricade);
             RebuildBarricade();
         }
         

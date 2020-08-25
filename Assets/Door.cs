@@ -60,6 +60,7 @@ public class Door : MonoBehaviour
     private void OpenOpenDoorModal()
     {
         openDoorModal.SetActive(true);
+        openDoorModal.GetComponent<Text>().text = "Abrir " + cost.ToString();
     }
 
     public bool CanOpen()
@@ -73,7 +74,6 @@ public class Door : MonoBehaviour
 
     public void OnOpen()
     {
-        Debug.Log("opening - "+ cost);
         PointsManager.instance.RemovePoints(cost);
         room.SetActive(true);
         WaveManager.instance.FindSpawns(room);

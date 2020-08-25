@@ -10,8 +10,10 @@ public class PlayerInfo : MonoBehaviour
     public static PlayerInfo instance;
 
     public bool alive;
+    public bool revive;
     public Slider lifeBar;
 
+    public float timeToRebuildBarricade;
     public int health;
     public int currentHealth;
 
@@ -24,6 +26,7 @@ public class PlayerInfo : MonoBehaviour
     void Start()
     {
         currentHealth = health;
+        revive = false;
     }
 
     // Update is called once per frame
@@ -31,6 +34,12 @@ public class PlayerInfo : MonoBehaviour
     {
         if (currentHealth < 0)
         {
+            if (revive)
+            {
+                currentHealth = health;
+                revive = false;
+                return;
+            }
             Death();
         }
     }

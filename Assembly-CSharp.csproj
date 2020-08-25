@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BarricadeObject.cs" />
     <Compile Include="Assets\CaixinhaDaSorte.cs" />
     <Compile Include="Assets\Door.cs" />
     <Compile Include="Assets\GameManager.cs" />
@@ -76,6 +77,29 @@
     <Compile Include="Assets\PointsManager.cs" />
     <Compile Include="Assets\Prefabs\Enemies\EnemyInfo.cs" />
     <Compile Include="Assets\Prefabs\Weapons\WeaponInfo.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\CameraController.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\GUIControls.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\IKHands.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\PerfectLookAt\FABRIKSolver.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\PerfectLookAt\PerfectLookAt.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\PerfectLookAt\PerfectLookAtData.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\PerfectLookAt\PerfectLookAtLegStabilizer.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\RPGCharacterController.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\RPGCharacterInputController.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\RPGCharacterMovementController.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\Code\RPGCharacterWeaponController.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\Gravity.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SimpleStateMachine.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SuperCharacterController\Core\BSPTree.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SuperCharacterController\Core\BruteForceMesh.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SuperCharacterController\Core\SuperCharacterController.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SuperCharacterController\Core\SuperCollider.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SuperCharacterController\Core\SuperCollisionType.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SuperCharacterController\Core\SuperMath.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SuperCharacterController\Core\SuperStateMachine.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SuperCharacterController\DebugDraw.cs" />
+    <Compile Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SuperCharacterController\Math3d.cs" />
+    <Compile Include="Assets\Revive.cs" />
     <Compile Include="Assets\Scripts\Barricade.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -88,6 +112,8 @@
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\WaveManager.cs" />
     <Compile Include="Assets\Spawner.cs" />
+    <None Include="Assets\PolygonWar\Materials\Shader\Particle VertexLit Blended_Backface.shader" />
+    <None Include="Assets\RPG Character Animation Pack\SuperCharacterController\Code\SuperCharacterController\README.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/newUnityInstalls/2019.4.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

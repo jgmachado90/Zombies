@@ -10,14 +10,15 @@ public class Enemy : MonoBehaviour
     public bool alive;
     public EnemyInfo enemyInfo;
     public Slider lifeBar;
-    
 
+    public int health;
     public int currentHealth;
 
     private void Start()
     {
         alive = true;
-        currentHealth = enemyInfo.health;
+        health = enemyInfo.health + (WaveManager.instance.currentWaveLevel * 30);
+        currentHealth = health;
         //GetComponent<AIDestinationSetter>().target = PlayerInfo.instance.transform;
 
     }
@@ -34,7 +35,7 @@ public class Enemy : MonoBehaviour
     {
         PointsManager.instance.AddPoints(10);
         currentHealth -= damage;
-        lifeBar.value = (float)currentHealth / enemyInfo.health;
+        lifeBar.value = (float)currentHealth / health;
 
     }
   

@@ -6,20 +6,18 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     public static WaveManager instance;
-
     public List<Transform> spawners;
-
     public GameObject enemyPrefab;
-
     public List<Enemy> enemies;
-
     public int currentWaveLevel;
-
+    public float timeBetweenSpawns;
     bool levelStart;
+
 
     private void Awake()
     {
         instance = this;
+        timeBetweenSpawns = 3f;
     }
 
     private void Start()
@@ -76,7 +74,7 @@ public class WaveManager : MonoBehaviour
 
                 enemies.Add(newEnemy.GetComponent<Enemy>());
                 numberOfZombiesSpawned++;
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(timeBetweenSpawns/currentWaveLevel);
             }
 
             if (enemies.Count == 0)

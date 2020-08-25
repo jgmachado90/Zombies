@@ -26,12 +26,12 @@ public class CaixinhaDaSorte : MonoBehaviour
     {
         if (CanBuy())
         {
-            Debug.Log("canbuy");
+           
             button.interactable = true;
         }
         else
         {
-            Debug.Log("cant buy");
+       
             button.interactable = false;
         }
     }

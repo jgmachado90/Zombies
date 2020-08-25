@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Joystick joystick;
 
+    public Animator playerAnimator;
 
     float horizontalMove;
     float verticalMove;
@@ -20,15 +22,42 @@ public class PlayerMovement : MonoBehaviour
         verticalMove = joystick.Vertical * runSpeed * Time.deltaTime;
         if (horizontalMove != 0 || verticalMove != 0)
         {
-            moving = true; 
+            if (!moving)
+            {
+                PlayAnimation("walk");
+                moving = true;
+
+            }
+
             Rotate();
             transform.position = new Vector3(transform.position.x + horizontalMove, transform.position.y + verticalMove, transform.position.z);
         }
         else
         {
-            moving = false;
+            if (moving)
+            {
+                moving = false;
+                PlayAnimation("idle");
+            }
         }
        
+    }
+
+    private void PlayAnimation(string animationName)
+    {
+        playerAnimator.SetBool("Sprint", false);
+
+        if(animationName == "walk")
+        {
+            Debug.Log("playing animation");
+            playerAnimator.SetBool("Moving", true);
+            playerAnimator.SetBool("Sprint", true);
+        }
+        if(animationName == "idle")
+        {
+            return;
+        }
+
     }
 
     private void Rotate()
